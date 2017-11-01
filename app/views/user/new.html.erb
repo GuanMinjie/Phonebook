@@ -1,4 +1,4 @@
-<h1>用户登录</h1>
+<h1>用户注册</h1>
 <br> </br>
 <%= form_tag :action => 'create' do %>
     <p> <label for = "user_name" >用户名:</label> </p>
@@ -6,6 +6,5 @@
     <br>
     <p> <label for = "user_password" >密码:</label> </p>
     <p> <%= text_field "users" ,"password" %></p>
-    <%= submit_tag "登陆" %>
+    <%= submit_tag "注册" %>
 <% end%>
-<%= link_to '注册', sign_up_path %>

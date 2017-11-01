@@ -11,6 +11,7 @@ class PhonebookController < ApplicationController
     end
     def create
       @phonebook = Phonebook.new(phonebook_params)
+
       if @phonebook.save
           redirect_to  :action => 'index'
       else

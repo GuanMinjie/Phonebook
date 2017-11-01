@@ -2,17 +2,18 @@ class UserController < ApplicationController
    def new
      @user = User.new
    end
-   def creat
+   def create
      @user = User.new(user_parmas)
      if @user.save
-      redirect_to 'Phonebooks#index'
+
+      redirect_to  'session#new'
      else
        render :action => 'new'
      end
 
    end
-
-   def user_params
-     params.require (:users).permit(:name,:password)
+private
+   def user_parmas
+     params.require(:users).permit(:name,:password)
    end
 end
