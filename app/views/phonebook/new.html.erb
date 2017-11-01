@@ -1,0 +1,8 @@
+<h1>新建联系人</h1>
+<%= form_tag :action => 'create' do %>
+    <p><label for = "linkman">姓名：</label></p>
+    <p><%= text_field 'phonebooks' , 'linkman'%></p>
+    <p><label for = "number">电话：</label></p>
+    <p><%= text_field 'phonebooks' , 'number'%></p>
+    <%= submit_tag "创建"%>
+<% end -%>

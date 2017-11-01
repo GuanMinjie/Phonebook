@@ -1,0 +1,25 @@
+<% if @phonebooks.blank? %>
+<p>还没有通讯录</p>
+<% else %>
+    <h1>我的通讯录</h1>
+    <table border="3">
+      <tr>
+
+        <th>姓名</th>
+        <th>联系方式</th>
+      </tr>
+      <% @phonebooks.each do |phonebook| %>
+          <tr>
+
+            <td><%= phonebook.linkman %></td>
+            <td><%= phonebook.number %></td>
+            <td><%= link_to '显示', {:action => 'show',:id => phonebook.id}%></td>
+            <td><%= link_to '编辑', {:action => 'edit',:id => phonebook.id}%></td>
+           
+          </tr>
+      <% end %>
+
+    </table>
+
+<% end%>
+<p><%= link_to "Add new phonebook", {:action => 'new' }%></p>
