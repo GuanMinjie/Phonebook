@@ -1,5 +1,6 @@
 class PhonebookController < ApplicationController
-    def index
+  #layout 'standard'
+  def index
         @phonebooks = Phonebook.all
     end
 
@@ -11,6 +12,8 @@ class PhonebookController < ApplicationController
     end
     def create
       @phonebook = Phonebook.new(phonebook_params)
+      @phonebook.user_id = session[:user_id]
+
       if @phonebook.save
           redirect_to  :action => 'index'
       else
@@ -23,7 +26,6 @@ class PhonebookController < ApplicationController
      end
      def update
       @phonebook = Phonebook.find(params[:id])
-
        if @phonebook.update_attributes(phonebook_params)
            redirect_to :action => 'show',:id => @phonebook
        else
@@ -36,7 +38,7 @@ class PhonebookController < ApplicationController
       end
   private
      def phonebook_params
-         params.require(:phonebooks).permit(:linkman,:number,:user_id)
+         params.require(:phonebooks).permit(:linkman,:number  )
            #params.require(:phonebooks).permit(:linkman, :number)
     end
 end

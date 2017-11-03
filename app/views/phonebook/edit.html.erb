@@ -1,0 +1,11 @@
+<h1>修改联系人</h1>
+<%= form_tag :action => 'update',method: :put do %>
+    <p><label for = "linkman">姓名：</label>
+    <%= @phonebook.linkman %></p>
+    <p><label for = "number">电话：</label>
+    <%= text_field 'phonebooks' , 'number'%></p>
+    <%= submit_tag "确认"%>
+   
+<% end %>
+<%= link_to 'Show', @phonebook %> |
+<%= link_to 'Back',phonebook_index_path %>
