@@ -12,7 +12,10 @@ class PhonebookController < ApplicationController
     end
     def create
       @phonebook = Phonebook.new(phonebook_params)
+<<<<<<< HEAD
       @phonebook.user_id = session[:user_id]
+=======
+>>>>>>> 80898d686580dd23be90fa7de81926f22abb5020
 
       if @phonebook.save
           redirect_to  :action => 'index'
